@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{690FA2DA-A0A8-4A57-B330-0FC81B59D42B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SpisokTovarov</RootNamespace>
+    <AssemblyName>SpisokTovarov</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Client.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientService.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentByService.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Gender.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacturer.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPhoto.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSale.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServicePhoto.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpisokModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpisokModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpisokModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SpisokModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpisokModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
+      <DependentUpon>SpisokModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="SpisokModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SpisokModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SpisokModel.edmx.diagram">
+      <DependentUpon>SpisokModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\picture.jpg" />
+    <Resource Include="Resources\FA90B138.jpg" />
+    <Resource Include="Resources\F490E078.jpg" />
+    <Resource Include="Resources\F460E078.jpg" />
+    <Resource Include="Resources\F310E078.jpg" />
+    <Resource Include="Resources\F200BC2F.jpg" />
+    <Resource Include="Resources\F160E078.jpg" />
+    <Resource Include="Resources\F8E0B138.jpg" />
+    <Resource Include="Resources\F2E0E078.jpg" />
+    <Resource Include="Resources\F2B0E078.jpg" />
+    <Resource Include="Resources\EFC05011.jpg" />
+    <Resource Include="Resources\EF80D790.jpg" />
+    <Resource Include="Resources\E9308929.jpg" />
+    <Resource Include="Resources\E5507A37.jpg" />
+    <Resource Include="Resources\E320BB7C.jpg" />
+    <Resource Include="Resources\E3A0B18A.jpg" />
+    <Resource Include="Resources\E0D0E079.jpg" />
+    <Resource Include="Resources\E0A0E079.jpg" />
+    <Resource Include="Resources\DC70BEC3.jpg" />
+    <Resource Include="Resources\D9605006.jpg" />
+    <Resource Include="Resources\D2508F32.jpg" />
+    <Resource Include="Resources\D4D0CE67.jpg" />
+    <Resource Include="Resources\D0D08F32.jpg" />
+    <Resource Include="Resources\CC40C869.jpg" />
+    <Resource Include="Resources\CC10C869.jpg" />
+    <Resource Include="Resources\C310B9F3.jpg" />
+    <Resource Include="Resources\C9C0F036.jpg" />
+    <Resource Include="Resources\BD80E8D5.jpg" />
+    <Resource Include="Resources\BA30C186.jpg" />
+    <Resource Include="Resources\B790A6AA.jpg" />
+    <Resource Include="Resources\B590AA7B.jpg" />
+    <Resource Include="Resources\B0F0CB59.jpg" />
+    <Resource Include="Resources\B0A0C186.jpg" />
+    <Resource Include="Resources\AD00B713.jpg" />
+    <Resource Include="Resources\97809225.jpg" />
+    <Resource Include="Resources\43909176.jpg" />
+    <Resource Include="Resources\40409946.jpg" />
+    <Resource Include="Resources\8430842A.jpg" />
+    <Resource Include="Resources\2390848B.jpg" />
+    <Resource Include="Resources\90505D31.jpg" />
+    <Resource Include="Resources\45908C52.jpg" />
+    <Resource Include="Resources\45008C52.jpg" />
+    <Resource Include="Resources\23106A35.jpg" />
+    <Resource Include="Resources\022096CB.jpg" />
+    <Resource Include="Resources\9750DA76.jpg" />
+    <Resource Include="Resources\9380C1E7.jpg" />
+    <Resource Include="Resources\9290C1E7.jpg" />
+    <Resource Include="Resources\6800BB8A.jpg" />
+    <Resource Include="Resources\6730A31C.jpg" />
+    <Resource Include="Resources\6080DCD5.jpg" />
+    <Resource Include="Resources\5250C855.jpg" />
+    <Resource Include="Resources\5180B90E.jpg" />
+    <Resource Include="Resources\3970E753.jpg" />
+    <Resource Include="Resources\3760D73F.jpg" />
+    <Resource Include="Resources\96E0C1E7.jpg" />
+    <Resource Include="Resources\92C0C1E7.jpg" />
+    <Resource Include="Resources\90D0B807.jpg" />
+    <Resource Include="Resources\90A0B807.jpg" />
+    <Resource Include="Resources\85C04040.jpg" />
+    <Resource Include="Resources\0070C563.jpg" />
+    <Resource Include="Resources\69C0CD62.jpg" />
+    <Resource Include="Resources\63C09E91.jpg" />
+    <Resource Include="Resources\59B0BE73.jpg" />
+    <Resource Include="Resources\54B0795D.jpg" />
+    <Resource Include="Resources\47E07CB5.jpg" />
+    <Resource Include="Resources\43E08C52.jpg" />
+    <Resource Include="Resources\43C09176.jpg" />
+    <Resource Include="Resources\39D0C188.jpg" />
+    <Resource Include="Resources\39A0C188.jpg" />
+    <Resource Include="Resources\30E0C751.jpg" />
+    <Resource Include="Resources\27B0C883.jpg" />
+    <Resource Include="Resources\23F0848B.jpg" />
+    <Resource Include="Resources\21B0E533.jpg" />
+    <Resource Include="Resources\9B3075EB.jpg" />
+    <Resource Include="Resources\8FE07916.jpg" />
+    <Resource Include="Resources\8F909ED7.jpg" />
+    <Resource Include="Resources\8F609ED7.jpg" />
+    <Resource Include="Resources\8E20A863.jpg" />
+    <Resource Include="Resources\8BC0C1A9.jpg" />
+    <Resource Include="Resources\7B70B9C6.jpg" />
+    <Resource Include="Resources\6DD0A012.jpg" />
+    <Resource Include="Resources\6DA0A012.jpg" />
+    <Resource Include="Resources\6CE0A012.jpg" />
+    <Resource Include="Resources\6CA0BE73.jpg" />
+    <Resource Include="Resources\5BE0C351.jpg" />
+    <Resource Include="Resources\5BB0C351.jpg" />
+    <Resource Include="Resources\5A30A7EE.jpg" />
+    <Resource Include="Resources\3DF0E4BC.jpg" />
+    <Resource Include="Resources\3DA0B713.jpg" />
+    <Resource Include="Resources\3B70C57C.jpg" />
+    <Resource Include="Resources\03D096CB.jpg" />
+    <Resource Include="Resources\2E60E06C.jpg" />
+    <Resource Include="Resources\2E30E06C.jpg" />
+    <Resource Include="Resources\2E00E06C.jpg" />
+    <Resource Include="Resources\2D709062.jpg" />
+    <Resource Include="Resources\2B609062.jpg" />
+    <Resource Include="Resources\2B009062.jpg" />
+    <Resource Include="Resources\2A109062.jpg" />
+    <Resource Include="Resources\0DF0A8A4.jpg" />
+    <Resource Include="Resources\0D60A8A4.jpg" />
+    <Resource Include="Resources\0D30C4EE.jpg" />
+    <Content Include="SpisokModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpisokModel.edmx</DependentUpon>
+      <LastGenOutput>SpisokModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SpisokModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SpisokModel.edmx</DependentUpon>
+      <LastGenOutput>SpisokModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
